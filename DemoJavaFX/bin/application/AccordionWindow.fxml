@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Accordion layoutX="22.0" layoutY="22.0">
+        <panes>
+          <TitledPane fx:id="titledpane_prem" animated="false" text="Premier League">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="listview_prem" layoutY="-10.0" prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane fx:id="titledpane_cham" animated="false" text="Championship">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="listview_cham" layoutX="1.0" prefHeight="180.0" prefWidth="202.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane fx:id="titledpane_done" animated="false" text="Division One">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="listview_done" prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+      <TextField fx:id="textfield_team" layoutX="300.0" layoutY="51.0" prefHeight="25.0" prefWidth="262.0" />
+      <Label layoutX="300.0" layoutY="22.0" text="Team" />
+      <ChoiceBox fx:id="combo_leagues" layoutX="300.0" layoutY="102.0" prefHeight="25.0" prefWidth="202.0" />
+      <Button fx:id="btn_add" layoutX="524.0" layoutY="102.0" mnemonicParsing="false" onAction="#addTeam" text="Add" />
+      <TextField fx:id="count_prem" layoutX="233.0" layoutY="18.0" prefHeight="25.0" prefWidth="30.0" />
+      <TextField fx:id="count_cham" layoutX="233.0" layoutY="46.0" prefHeight="25.0" prefWidth="30.0" />
+      <TextField fx:id="count_done" layoutX="233.0" layoutY="73.0" prefHeight="25.0" prefWidth="30.0" />
+   </children>
+</AnchorPane>

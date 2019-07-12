@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane styleClass="classname" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane fx:id="pane" prefHeight="246.0" prefWidth="370.0">
+         <children>
+            <ButtonBar layoutX="130.0" layoutY="192.0" prefHeight="40.0" prefWidth="192.0">
+              <buttons>
+                  <Button fx:id="btn_ok" mnemonicParsing="false" onAction="#clicked" text="OK" />
+                <Button fx:id="btn_cancel" mnemonicParsing="false" onAction="#clicked" text="Cancel" />
+              </buttons>
+            </ButtonBar>
+            <AnchorPane prefHeight="116.0" prefWidth="186.0">
+               <children>
+                  <TextField fx:id="txtField" layoutX="19.0" layoutY="21.0" />
+                  <Label fx:id="lblField" layoutX="19.0" layoutY="66.0" prefHeight="17.0" prefWidth="149.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="210.0" prefHeight="200.0" prefWidth="160.0">
+               <children>
+                  <ListView fx:id="listview" layoutX="14.0" layoutY="30.0" prefHeight="138.0" prefWidth="132.0" />
+               </children>
+            </AnchorPane>
+            <Button fx:id="btn_open" layoutX="93.0" layoutY="200.0" mnemonicParsing="false" onAction="#openNewWindow" text="Open" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

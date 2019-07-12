@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping>
+  <class name="com.qa.Owner" table="owners" >
+
+    <id name="ownerID" type="int" >
+      <column name="OwnerID" length="4" not-null="true" />
+         <generator class="assigned" />
+    </id>
+
+    <property name="name" >
+      <column name="Name" length="30" not-null="true" />
+    </property>
+
+    <property name="email" >
+      <column name="Email" length="30" not-null="true" />
+    </property>
+
+    <set name="animals" lazy="true" inverse="true"
+            cascade="all-delete-orphan">
+      <key column="OwnerID" />
+      <one-to-many class="com.qa.Animal" />
+    </set>
+  </class>
+ </hibernate-mapping>

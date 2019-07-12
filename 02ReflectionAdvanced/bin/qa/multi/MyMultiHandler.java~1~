@@ -1,0 +1,33 @@
+package qa.javadv.lab.multi;
+
+import java.lang.reflect.*;
+import java.util.*;
+
+public class MyMultiHandler implements InvocationHandler {
+	private Object[] targets;
+
+	public MyMultiHandler(Object[] targets) {
+		this.targets = targets;
+	}
+
+	public Object invoke(Object proxy, Method m, Object[] params) throws Throwable {
+		System.out.println(m);
+
+                // To do: exercise 2, step 3
+                // Using the Method object passed in, determine which
+                // class this method belongs to.
+
+		Object target = null;
+
+                // To dp: exercise 2, step 4
+                // Loop through the array of Objects (targets) and find
+                // the first Object that is applicable for the Method.
+
+		Object val = null;
+
+                // To do: exercise 2, step 5
+                // Invoke the method, and return its return value.
+
+		return val;
+	}
+}

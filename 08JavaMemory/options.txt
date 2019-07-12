@@ -1,0 +1,5 @@
+-XX:+PrintGCDetails
+-Xloggc:log.txt -XX:+PrintGCDetails
+-Xloggc:log.txt -XX:+PrintGCDetails -XX:+PrintTenuringDistribution
+-Xloggc:log.txt -XX:+PrintGCDetails -XX:+PrintTenuringDistribution -XX:MaxTenuringThreshold=2
+-Xloggc:log.txt -XX:+PrintGCDetails -XX:+PrintClassHistogramBeforeFullGC
