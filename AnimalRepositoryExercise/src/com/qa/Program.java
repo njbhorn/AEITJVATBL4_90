@@ -14,6 +14,9 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
+import com.example.demo.Animal;
+import com.example.demo.Owner;
+
 public class Program {
 
 	private static SessionFactory factory ;
@@ -34,8 +37,8 @@ public class Program {
 					.applySettings(configuration.getProperties())
 					.build();
 			factory = configuration
-					.addAnnotatedClass(com.qa.Owner.class)
-					.addAnnotatedClass(com.qa.Animal.class)
+					.addAnnotatedClass(com.example.demo.Owner.class)
+					.addAnnotatedClass(com.example.demo.Animal.class)
 					.buildSessionFactory(serviceRegistry);
 
 		} catch ( Exception ex ) {

@@ -9,6 +9,8 @@ import java.util.TimeZone;
 public class DemoInstantsPeriodsDurations {
 
 	public static void main(String[] args) throws InterruptedException {
+		
+		System.out.println("Start...");
 
 		Instant start = Instant.now();
 		
@@ -31,6 +33,10 @@ public class DemoInstantsPeriodsDurations {
 		elapsed = Duration.between( start,  end) ;
 		
 		System.out.println("Elapsed Time in Nano Seconds = " + elapsed.toNanos());
+		System.out.println("Elapsed Time in Milliseconds = " + elapsed.toMillis());
+		System.out.println("Elapsed Time in Minutes = " + elapsed.toMinutes());
+		
+		System.out.println();
 		
 		ZoneId zoneNY = ZoneId.of("America/New_York");
 		ZoneId zoneQA = TimeZone.getDefault().toZoneId();

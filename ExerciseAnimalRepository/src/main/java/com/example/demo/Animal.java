@@ -1,4 +1,4 @@
-package com.qa ;
+package com.example.demo ;
 
 import java.util.Date;
 
@@ -9,39 +9,43 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="animals")
 public class Animal {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int animalID;
+	
 	private String name;
 	private String type;
 	private Date dob;
+	
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="id")
-	private int ownerID ;
+	private Owner owner ;
+//	private int ownerID ;
 
 	public Animal() {
 
 	}
 
-	public Animal(int id, String name, String type, Date dob) {
+	public Animal( String name, String type, Date dob) {
 
-		this.animalID = id;
 		this.name = name;
 		this.type = type;
 		this.dob = dob;
 	}
 
-	public Animal(int id, String name, String type, Date dob, Owner owner) {
+	public Animal(String name, String type, Date dob, Owner owner) {
 
-		this.animalID = id;
 		this.name = name;
 		this.type = type;
 		this.dob = dob;
-		this.ownerID = owner.getId();
+//		this.ownerID = owner.getId();
+		this.owner = owner ;
 	}
 
 	public int getAnimalID() {
@@ -68,21 +72,21 @@ public class Animal {
 		this.type = type;
 	}
 
-	public int getOwner() {
-		return ownerID ;
-	}
-
-	public void setOwner(int owner) {
-		this.ownerID = owner;
-	}
-
-//	public Owner getOwner() {
-//		return ownerID;
+//	public int getOwner() {
+//		return ownerID ;
 //	}
 //
-//	public void setOwner(Owner owner) {
+//	public void setOwner(int owner) {
 //		this.ownerID = owner;
 //	}
+
+	public Owner getOwner() {
+		return owner;
+	}
+
+	public void setOwner(Owner owner) {
+		this.owner = owner;
+	}
 
 	public Date getDob() {
 		return dob;
@@ -95,7 +99,7 @@ public class Animal {
 
 	@Override
 	public String toString() {
-		return "Animal [id=" + animalID + ", name=" + name + ", type=" + type + ", dob=" + dob + ", owner=" + ownerID
+		return "Animal [id=" + animalID + ", name=" + name + ", type=" + type + ", dob=" + dob + ", owner=" + owner
 				+ ", getId()=" + getAnimalID() + ", getName()=" + getName() + ", getType()=" + getType() + ", getOwner()="
 				+ getOwner() + ", getDob()=" + getDob() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
 				+ ", toString()=" + super.toString() + "]";
